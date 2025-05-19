@@ -1,0 +1,499 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background: rgb(107, 107, 107);
+    overflow-x: hidden;
+    min-height: 2px;
+    min-width: 14px;
+}
+
+nav{
+  display: flex;
+  list-style: none;
+  background-color: black;
+  justify-content: space-between;
+  color: rgb(107, 107, 107);
+  height: 77px;
+  align-items: center;
+}
+
+nav ul{
+ display: flex;
+ list-style: none;
+ gap: 1rem;
+ width: 90%;
+ justify-content: space-between;
+}
+
+nav ul li a:hover{
+ color: rgb(167, 167, 167);
+}
+
+.navbar{
+  background: rgb(51, 51, 51); 
+  font-family: calibri; 
+  font-size: 23px;
+  padding: 23px;
+  text-decoration-line: none;
+}
+
+.navdiv{
+  display: flex; 
+  align-items: center; 
+  gap: 1rem;
+  justify-content: space-between;
+  text-decoration-line:none;
+} 
+
+.logo {
+  box-shadow: beige;
+  border: 1px;
+  width: 200px;
+  height: 200px;
+}
+
+.logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.judul {
+  font-size: 40px; 
+  font-weight: 500px; 
+  color: rgb(225, 225, 225);
+  text-decoration-line: none;
+  margin-right: 100px;
+  margin-left: 35px;
+  margin-top: 1px;
+}
+
+  li{
+    list-style: none; 
+    display: inline-block;
+    margin-top: 1px;
+  }
+
+  li a{
+    color: rgb(175, 175, 175); 
+    font-size: 25px; 
+    font-weight: bold; 
+    margin-right:60px;
+    margin-left: 50px;
+    text-decoration-line: none;
+  }
+
+  .navbar .navdiv a:hover{
+    color: var(--primary);
+  }
+
+
+
+  .navbar .menu-toogle a:hover{
+    color: var(--primary);
+  }
+
+.menu-toogle{
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  background-color: rgb(51, 51, 51);
+  position: relative;
+}
+
+.menu-toogle input{
+  position: absolute; 
+  width: 40px;
+  height: 28px;
+  left: -5px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toogle span{
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #e7e7e7;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+.menu-toogle span:nth-child(4){
+  transform-origin: 0 100%;
+}
+
+.menu-toogle input:checked ~ span:nth-child(2){
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.menu-toogle input:checked ~ span:nth-child(3){
+  background-color:rgb(51, 51, 51);
+}
+
+.menu-toogle input:checked ~ span:nth-child(4){
+  transform: rotate(-45deg) translate(2px, 5px);
+}
+
+.Home{
+  width: 300vh;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  background-image: url('istockphoto-183805873-1024x1024.jpg');
+  background-size: 80%;
+  background-repeat: no-repeat;
+  margin-top: 0%;
+}
+
+.content{
+  color: #e7e7e7;
+  display: flex;
+  margin-right: 150px;
+  margin-left: 150px;
+  gap: 4rem;
+}
+
+.logo2{
+  margin-right: 1px;
+  margin-left: 1px;
+  width: 200px;
+  height: 200px;
+}
+
+.logo2 img{
+  width: 125%;
+  height: 125%;
+  margin-top: -10%;
+  border: 10px solid #e7e7e7;
+  border-radius: 50%;
+  box-shadow: 5px 5px 20px rgb(77, 77, 77);
+  object-fit: cover;
+}
+
+.Welcomer{
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  margin-top: 65px;
+}
+
+.Nama_Website{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color:rgb(127, 194, 97);
+}
+
+.Keterangan_Website{
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+}
+
+.Button_Payment{
+  width: 77px;
+  height: 25px;
+  color: #c7c7c7;
+  background-color: #444444;
+  border-radius: 15px;
+  margin-top: 17px;
+}
+
+.Button_Payment a{
+  color: #e7e7e7;
+  text-decoration-line: none;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Section2{
+  background-color: #777777;
+  gap: 1rem;
+  display: flex;
+}
+
+.About_Us{
+  display: flex;
+  gap: 5rem;
+  margin-top: 0%;
+  background-color: #c4c4c4;
+  background-size: 80%;
+  margin-right: 0%;
+  margin-left: 0%;
+  width: 50%;
+  height: 300px;
+  border-color: #7a7a7a;
+  border-radius: 15px;
+}
+
+.logo3{
+  margin-right: 40px;
+  margin-left: 15px;
+  width: 400px;
+  height: 200px;
+  display: flex;
+  margin-top: 35px;
+}
+
+.logo3 img{
+  width: 170%;
+  height: 125%;
+  margin-top: -10%;
+  border: 10px solid #e7e7e7;
+  border-radius: 50%;
+  box-shadow: 5px 5px 20px rgb(77, 77, 77);
+  object-fit: cover;
+}
+
+.Tulisan_About_Us{
+  margin-top: 70px;
+}
+
+.Title_About_Us{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border-bottom: 1px solid #868686;
+  padding-bottom: 10px;
+  font-size: 150%;
+  font-weight: bold;
+  margin-top: 0%;
+}
+
+.Keterangan_About_Us{
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 15px;
+}
+
+.Help{
+  background-color: #b1b1b1;
+  width: 700px;
+  border-color: #7a7a7a;
+  border-radius: 15px;
+}
+
+.Tulisan_Help{
+  gap: 5rem;
+  margin-right: 2px;
+  margin-left: 15px;
+  margin-top: 98px;
+  text-align: left;
+}
+
+.Title_Help{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 150%;
+  margin-top: -28px;
+  border-bottom: 1px solid #777777;
+  padding-bottom: 10px;
+}
+
+.Keterangan_Help{
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 15px;
+}
+
+.Email{
+ font-family: Arial, Helvetica, sans-serif; 
+}
+
+.Our_Team{
+  background-color: #777;
+  height: 325px;
+  text-align: center;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #c7c7c7;
+}
+
+.Judul_Our_Team{
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #b0b0b0;
+  padding-bottom: 7px;
+}
+
+.Foto_Anggota{
+  align-items: center;
+  margin-right: 2px;
+  margin-left: 55px;
+  gap: 20rem;
+  display: flex;
+  width: 150px;
+  height: 200px;
+  display: flex;
+  margin-top: 35px;
+}
+
+.Foto_Anggota img{
+  width: 1070%;
+  height: 107%;
+  margin-top: -10%;
+  border: 10px solid #e7e7e7;
+  border-radius: 50%;
+  box-shadow: 5px 5px 20px rgb(77, 77, 77);
+  object-fit: cover;
+}
+
+.Nama_Anggota_Kelompok{
+  display: flex;
+  gap: 7rem;
+  margin-top: 10px;
+  margin-left: 45px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.Nama_Anggota1{
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 10px;
+}
+
+.Nama_Anggota2{
+  margin-left: 55px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Nama_Anggota3{
+  margin-left: 75px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Nama_Anggota4{
+  margin-left: 45px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Penutup{
+  background-color: rgb(51, 51, 51);
+  display: flex;
+  gap: 48rem;
+}
+
+.navbar2{
+  background: rgb(51, 51, 51); 
+  font-family: calibri; 
+  font-size: 23px;
+  padding: 23px;
+}
+
+.navdiv2{
+  align-items: center; 
+  gap: 1rem;
+  justify-content: space-between;
+  text-decoration-line: none;
+  background-color: rgb(51, 51, 51);
+} 
+
+.Contact_Us{
+  background-color: rgb(51, 51, 51);
+  width: 350px;
+  margin-top: -100px;
+}
+
+.Tulisan_Contact_Us{
+  gap: 5rem;
+  margin-right: 2px;
+  margin-top: 98px;
+  color: #7a7a7a;
+
+}
+
+.Title_Contact_Us{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 150%;
+  margin-top: -28px;
+  border-bottom: 1px solid #777777;
+  padding-bottom: 10px;
+}
+
+.Keteranan_Contact_Us{
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 15px;
+}
+
+
+.Sponsor{
+  margin-top: 15px;
+  background-color: rgb(51, 51, 51);
+  width: 300px;
+  margin-left: -10%;
+}
+
+.Judul_Sponsor{
+  font-size: 100%;
+  color: rgb(193, 193, 193);
+  margin-left: 16vh;
+  margin-right: 50px;
+  align-items: center;
+  margin-top: 0%;
+  align-items: center;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Foto_Sponsor{
+  align-items: center;
+  gap: 40px;
+  display: flex;
+  width: 125px;
+  height: 100px;
+  display: flex;
+  margin-top: -1px;
+  margin-left: 70px;
+}
+
+.Foto_Sponsor img{
+  width: 250%;
+  height: 17%;
+  margin-top: -10%;
+  object-fit: cover;
+}
+
+/*Ukuran Tablet*/
+@media screen and (max-width: 777px){ 
+  nav ul {
+    width: 50%;
+  }
+}
+
+/*Ukuran Mobile*/
+@media screen and (max-width: 576px){
+  .menu-toogle{
+    display:flex;
+  }
+  nav ul{
+    position: absolute;
+    right: 0;
+    top: 30px;
+    height: 100vh;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(51, 51, 51);
+    z-index: -1;
+    transform: translate(100%);
+    transition: all 1s;
+  }
+
+  nav ul.slide{
+    transform: translate(0);
+  }
+
+  .judul {
+    font-size: 40px; 
+    font-weight: 500px; 
+    color: rgb(202, 202, 202);
+    text-decoration-line: none;
+    margin-right: 100px;
+    margin-left: 4px;
+    margin-top: 1px;
+  }
+}

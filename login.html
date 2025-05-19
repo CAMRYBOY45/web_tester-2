@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login Page</title>
+  <style>
+    /* Mengimpor font Poppins yang modern dan bersih untuk tampilan yang rapi */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      box-sizing: border-box; /* Mengatur box sizing untuk konsistensi padding dan border */
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2); /* Gradient warna biru ungu yang segar dan modern */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Memastikan body mengambil tinggi penuh layar */
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .login-container {
+      background: rgba(255 255 255 / 0.12);
+      backdrop-filter: blur(15px); /* Efek glassmorphism dengan blur dibelakang */
+      padding: 3rem 3.5rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+      max-width: 360px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      animation: fadeInScale 0.6s ease forwards; /* Animasi muncul dan membesar saat load */
+    }
+
+    /* Animasi fadeInScale: mulai dari opacity 0 + scale kecil, ke opacity 1 dengan scale normal */
+    @keyframes fadeInScale {
+      0% {
+        opacity: 0;
+        transform: scale(0.85);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .logo {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.2rem;
+      color: #8561f7;
+      text-shadow: 0 2px 8px rgba(133, 97, 247, 0.8);
+      user-select: none; /* Mencegah teks logo diseleksi */
+    }
+
+    .login-container h2 {
+      margin-bottom: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #e6e6ff;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+    }
+
+    /* Style input teks dan password */
+    input[type="text"],
+    input[type="password"] {
+      padding: 1rem 1.2rem;
+      border: none;
+      border-radius: 14px;
+      font-size: 1.1rem;
+      outline: none;
+      background: rgba(255 255 255 / 0.18);
+      color: #f1f1f1;
+      box-shadow: inset 0 0 8px #827af1; /* Soft purple glow */
+      transition: background-color 0.4s ease, box-shadow 0.4s ease;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      user-select: text;
+    }
+
+    /* Placeholder berwarna agak transparan dan sedikit miring */
+    input[type="text"]::placeholder,
+    input[type="password"]::placeholder {
+      color: rgba(255 255 255 / 0.7);
+      font-style: italic;
+    }
+
+    /* Interaksi saat input fokus */
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      background: rgba(255 255 255 / 0.28);
+      box-shadow: 0 0 15px 2px #9579f7;
+    }
+
+    /* Style tombol masuk */
+    button {
+      padding: 1rem 1rem;
+      background: linear-gradient(135deg, #8777f8, #6f63ff);
+      color: white;
+      border: none;
+      border-radius: 16px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 7px 20px rgb(111 99 255 / 0.7);
+      letter-spacing: 0.08em;
+      transition: background 0.35s ease, box-shadow 0.35s ease, transform 0.15s ease;
+      user-select: none;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #a28dfc, #8777f8);
+      box-shadow: 0 12px 30px rgb(162 141 252 / 0.85);
+      transform: translateY(-3px);
+    }
+
+    button:active {
+      transform: translateY(0);
+      box-shadow: 0 6px 15px rgb(111 99 255 / 0.9);
+    }
+
+    /* === Bagian animasi dan styling untuk pesan informasi password salah === */
+    .info {
+      margin-top: 1rem;
+      background: rgba(255, 50, 50, 0.15);
+      border-radius: 10px;
+      padding: 0.75rem;
+      color: #ffdddd;
+      font-size: 1rem;
+      font-weight: 600;
+      text-shadow: 0 0 5px #ff4c4c;
+      user-select: none;
+      animation: shake 0.4s ease; /* Animasi goyang saat muncul */
+    }
+
+    /* === Bagian styling dan interaksi untuk tulisan Forget Password === */
+    .forget-password {
+      margin-top: 0.5rem;
+      color: #ffc2c2;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-decoration: underline wavy;
+      font-weight: 600;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+
+    .forget-password:hover,
+    .forget-password:focus {
+      color: #ff7a7a;
+      outline: none;
+    }
+
+    /* === Keyframes animasi shake (goyang horizontal) === */
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-10px); }
+      40%, 80% { transform: translateX(10px); }
+    }
+    /* === End bagian animasi dan styling pesan info & forget password === */
+
+    /* Responsive agar baik di layar kecil */
+    @media (max-width: 400px) {
+      .login-container {
+        padding: 2rem 2rem;
+        width: 90%;
+      }
+      button {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container" role="main" aria-label="Form login">
+    <div class="logo" aria-hidden="true">MYAPP</div> <!-- Logo sederhana -->
+    <h2>Login</h2>
+    <form id="loginForm" novalidate>
+      <input type="text" name="username" placeholder="Username" required autocomplete="username" aria-label="Username" />
+      <input type="password" name="password" placeholder="Password" required autocomplete="current-password" aria-label="Password" />
+      <button type="submit" aria-live="polite">Masuk</button>
+    </form>
+    <!-- Container pesan info dan forget password muncul di sini -->
+    <div id="messageContainer" role="alert" aria-live="assertive"></div>
+  </div>
+
+<!-- Bagian messageContainer di JS -->
+<script>
+  const form = document.getElementById('loginForm');
+  const messageContainer = document.getElementById('messageContainer');
+
+  const validPassword = "password123";
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    messageContainer.innerHTML = '';
+
+    const passwordInput = form.password.value.trim();
+
+    if (passwordInput === validPassword) {
+      alert('Login berhasil!');
+      form.reset();
+    } else {
+      const info = document.createElement('div');
+      info.classList.add('info');
+      info.textContent = 'Password salah';
+
+      // ==== PERUBAHAN PADA BAGIAN FORGET PASSWORD DARI DIV KE LINK A ====
+      const forgetPassword = document.createElement('a'); // Ganti div jadi <a>
+      forgetPassword.classList.add('forget-password');
+      forgetPassword.textContent = 'Forget Password';
+      forgetPassword.href = 'forget_password.html'; // Menjadi link arahkan langsung ke halaman lupa password
+      forgetPassword.tabIndex = 0;
+      forgetPassword.setAttribute('aria-label', 'Forget Password');
+      // ==================================================================
+
+      messageContainer.appendChild(info);
+      messageContainer.appendChild(forgetPassword);
+
+      messageContainer.classList.remove('shake');
+      void messageContainer.offsetWidth;
+      messageContainer.classList.add('shake');
+    }
+  });
+</script>
+</body>
+</html>

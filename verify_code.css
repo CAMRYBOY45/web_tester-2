@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to right, #2f80ed, #56ccf2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.form h2 {
+  color: #2f80ed;
+  margin-bottom: 10px;
+}
+
+.form p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border 0.3s;
+}
+
+.form input:focus {
+  border-color: #2f80ed;
+  outline: none;
+}
+
+.form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background-color: #2f80ed;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form button:hover {
+  background-color: #1c60c1;
+}
+
+.form .back {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #2f80ed;
+  text-decoration: none;
+}

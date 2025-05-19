@@ -1,0 +1,32 @@
+body {
+    background-color: antiquewhite;
+}
+
+.search-box {
+    width: 1200px;
+}
+
+.reload {
+    position: relative;
+    width: 100%;
+    top: 3px;
+}
+
+.menu {
+    font-size: 30px;
+}
+
+.menu-kata {
+    position: relative;
+    width: 100%;
+    top: -59px;
+    right: -30px;
+}
+
+.language {
+    position: relative;
+    width: 43px;
+    top: -127px;
+    right: -1170px;
+    border: solid black;
+}

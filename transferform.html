@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transfer - Tracklance</title>
+    <link rel="shortcut icon" href="Finance_Tracking_System_Shortcut Icon__-removebg-preview.png">
+    <link rel="stylesheet" href="TransferForm.css" />
+  </head>
+  <body>
+
+
+    <div class="Navigasi_Judul_Transfer_Uang">
+      <h1 class="Judul_Transfer_Uang">Transfer Uang - Tracklance</h1>
+    </div>
+   </section>
+
+    <!-- Pilih Jenis Akun -->
+    <label for="accountType">Pilih Jenis Akun:</label>
+    <select id="accountType" onchange="toggleForm()">
+      <option value="personal">Personal</option>
+      <option value="business">Business</option>
+    </select>
+
+    <!-- Form Personal -->
+    <div id="formPersonal" class="form-section">
+      <h2>Form Transfer Personal</h2>
+      <form action="#">
+        <label>Nomor Tujuan:</label><br />
+        <input
+          type="text"
+          name="nomor"
+          placeholder="Contoh: 081234567890" />
+          <br />
+          <br />
+
+        <label>Jumlah Transfer:</label><br />
+        <input type="number" name="jumlah" placeholder="Rp" /><br /><br />
+
+        <label>Catatan (Opsional):</label><br />
+        <input type="text" name="catatan" /><br /><br />
+
+        <button type="submit">Kirim</button>
+        <ul class="Tombol_Back">
+          <li class="Back"><a href="main_menu.html">>>Back To Menu</a></li>
+        </ul>
+      </form>
+    </div>
+
+    <!-- Form Bisnis -->
+    <div id="formBusiness" class="form-section" style="display: none">
+      <h2>Form Transfer Bisnis</h2>
+      <form action="#">
+        <label>Upload File Transfer (CSV):</label><br />
+        <input type="file" name="fileTransfer" /><br /><br />
+
+        <label>Kategori Transfer:</label><br />
+        <select name="kategori">
+          <option value="gaji">Gaji Karyawan</option>
+          <option value="vendor">Pembayaran Vendor</option>
+          <option value="lainnya">Lainnya</option></select
+        ><br /><br />
+
+        <label>Catatan:</label><br />
+        <input type="text" name="catatanBisnis" /><br /><br />
+
+        <button type="submit">Kirim Massal</button>
+      </form>
+    </div>
+
+    <script>
+      function toggleForm() {
+        const type = document.getElementById("accountType").value;
+        document.getElementById("formPersonal").style.display =
+          type === "personal" ? "block" : "none";
+        document.getElementById("formBusiness").style.display =
+          type === "business" ? "block" : "none";
+      }
+    </script>
+  </body>
+</html>
