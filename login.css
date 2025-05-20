@@ -1,28 +1,30 @@
-/* style.css */
+/* login.css */
 
+/* Reset dasar */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Body dengan latar belakang lembut dan pusatkan konten */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f0f4f8;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
 }
 
-/* Container utama login */
+/* Kontainer utama login */
 .login-container {
   background-color: #ffffff;
   padding: 2rem;
   max-width: 400px;
   width: 90%;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,19 +38,20 @@ body {
   margin-bottom: 1rem;
 }
 
-/* Heading */
+/* Judul */
 h2 {
   margin-bottom: 1.5rem;
   color: #34495e;
 }
 
+/* Form login */
 form {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-/* Input fields */
+/* Input text dan password */
 input[type="text"],
 input[type="password"] {
   padding: 0.75rem;
@@ -56,16 +59,17 @@ input[type="password"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
   border-color: #2980b9;
   outline: none;
+  box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
 }
 
-/* Submit button */
+/* Tombol masuk */
 button[type="submit"] {
   padding: 0.75rem;
   background-color: #2980b9;
@@ -74,14 +78,17 @@ button[type="submit"] {
   border-radius: 4px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, transform 0.2s;
 }
 
-button[type="submit"]:hover {
+button[type="submit"]:hover,
+button[type="submit"]:focus {
   background-color: #3498db;
+  outline: none;
+  transform: translateY(-1px);
 }
 
-/* Pesan info dan forget password container */
+/* Container pesan info dan tautan lupa password */
 #messageContainer {
   margin-top: 1rem;
   width: 100%;
@@ -89,18 +96,18 @@ button[type="submit"]:hover {
   position: relative;
 }
 
-/* Pesan info gaya */
+/* Pesan error/info */
 #messageContainer .info {
   background-color: #fdecea;
   color: #b00020;
   padding: 0.75rem;
   border: 1px solid #f5c6cb;
   border-radius: 4px;
-  margin-bottom: 0.5rem;
   font-size: 0.95rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Untuk efek shake saat password salah */
+/* Animasi shake saat password salah */
 #messageContainer.shake {
   animation: shakeAnimation 0.3s;
 }
@@ -114,7 +121,7 @@ button[type="submit"]:hover {
   100% { transform: translateX(0); }
 }
 
-/* Forget password link */
+/* Link lupa password */
 .forget-password {
   display: inline-block;
   margin-top: 0.5rem;
@@ -131,7 +138,7 @@ button[type="submit"]:hover {
   outline: none;
 }
 
-/* Section daftar akun di bawah tombol login */
+/* Bagian daftar akun baru */
 .register-section {
   margin-top: 1.5rem;
   text-align: center;
@@ -139,6 +146,7 @@ button[type="submit"]:hover {
   color: #555;
 }
 
+/* Link daftar akun */
 .register-link {
   display: inline-block;
   margin-top: 0.5rem;
@@ -147,11 +155,12 @@ button[type="submit"]:hover {
   color: #fff;
   border-radius: 4px;
   text-decoration: none;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, transform 0.2s;
 }
 
 .register-link:hover,
 .register-link:focus {
   background-color: #27ae60;
   outline: none;
+  transform: translateY(-1px);
 }
