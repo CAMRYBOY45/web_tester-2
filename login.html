@@ -26,53 +26,57 @@
   </div>
 
   <!-- JS bagian messageContainer dan validasi -->
-  <script>
-    const form = document.getElementById('loginForm');
-    const messageContainer = document.getElementById('messageContainer');
+<script>
+  const form = document.getElementById('loginForm');
+  const messageContainer = document.getElementById('messageContainer');
 
-    const validusername = "admin1234"; // Hardcoded username for demonstration
-    const validPassword = "password123"; // Hardcoded password for demonstration
+  const validusername = "admin1234"; // Username yang valid
+  const validPassword = "password123"; // Password yang valid
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      messageContainer.innerHTML = '';
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    messageContainer.innerHTML = '';
 
-      const usernameInput = form.username.value.trim();
-      const passwordInput = form.password.value.trim();
+    const usernameInput = form.username.value.trim();
+    const passwordInput = form.password.value.trim();
 
-      // Basic validation for username
-      if (usernameInput === '') {
-        const info = document.createElement('div');
-        info.classList.add('info');
-        info.textContent = 'Username tidak boleh kosong';
-        messageContainer.appendChild(info);
-        return;
-      }
+    // Validasi username tidak kosong
+    if (usernameInput === '') {
+      const info = document.createElement('div');
+      info.classList.add('info');
+      info.textContent = 'Username tidak boleh kosong';
+      messageContainer.appendChild(info);
+      return;
+    }
 
-      if (passwordInput === validPassword) {
-        alert('Login berhasil!');
-        form.reset();
-      } else {
-        const info = document.createElement('div');
-        info.classList.add('info');
-        info.textContent = 'Password salah';
+    // Cek apakah username dan password cocok
+    if (usernameInput === validusername && passwordInput === validPassword) {
+      alert('Login berhasil!');
+      form.reset();
 
-        // Ganti div jadi <a> untuk forget password
-        const forgetPassword = document.createElement('a');
-        forgetPassword.classList.add('forget-password');
-        forgetPassword.textContent = 'Forget Password';
-        forgetPassword.href = 'forget_password.html'; // Arahkan ke halaman lupa password
-        forgetPassword.tabIndex = 0;
-        forgetPassword.setAttribute('aria-label', 'Forget Password');
+      // Pindah ke halaman main_menu.html
+      window.location.href = 'main_menu.html';
+    } else {
+      const info = document.createElement('div');
+      info.classList.add('info');
+      info.textContent = 'Password salah';
 
-        messageContainer.appendChild(info);
-        messageContainer.appendChild(forgetPassword);
+      // Tambahkan link lupa password
+      const forgetPassword = document.createElement('a');
+      forgetPassword.classList.add('forget-password');
+      forgetPassword.textContent = 'Forget Password';
+      forgetPassword.href = 'forget_password.html';
+      forgetPassword.tabIndex = 0;
+      forgetPassword.setAttribute('aria-label', 'Forget Password');
 
-        messageContainer.classList.remove('shake');
-        void messageContainer.offsetWidth; // Trigger reflow
-        messageContainer.classList.add('shake');
-      }
-    });
-  </script>
+      messageContainer.appendChild(info);
+      messageContainer.appendChild(forgetPassword);
+
+      messageContainer.classList.remove('shake');
+      void messageContainer.offsetWidth; // Trigger reflow
+      messageContainer.classList.add('shake');
+    }
+  });
+</script>
 </body>
 </html>
