@@ -1,166 +1,194 @@
-/* login.css */
+/* login.css - Versi Lebih Menarik dan Modern */
 
-/* Reset dasar */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Body dengan latar belakang lembut dan pusatkan konten */
+/* Body dengan latar belakang gradien lembut dan pusatkan konten */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f0f4f8;
+  background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
-/* Kontainer utama login */
+/* Kontainer utama login dengan efek bayangan dan latar belakang putih semi-transparan */
 .login-container {
-  background-color: #ffffff;
-  padding: 2rem;
-  max-width: 400px;
-  width: 90%;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 3rem 2rem;
+  max-width: 420px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Logo sederhana */
+.login-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+/* Logo besar dan berwarna */
 .logo {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: #2c3e50;
-  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+  font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', sans-serif;
 }
 
 /* Judul */
 h2 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: #34495e;
+  font-weight: 600;
+  font-size: 1.8rem;
 }
 
-/* Form login */
+/* Form */
 form {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-/* Input text dan password */
+/* Input fields yang keren dan modern */
 input[type="text"],
 input[type="password"] {
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
   font-size: 1rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
   border-color: #2980b9;
+  box-shadow: 0 0 8px rgba(41, 128, 185, 0.3);
   outline: none;
-  box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
 }
 
-/* Tombol masuk */
+/* Tombol masuk yang modern dan interaktif */
 button[type="submit"] {
-  padding: 0.75rem;
-  background-color: #2980b9;
+  padding: 1rem;
+  background: linear-gradient(135deg, #2980b9, #3498db);
   color: #fff;
   border: none;
-  border-radius: 4px;
-  font-size: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
 }
 
 button[type="submit"]:hover,
 button[type="submit"]:focus {
-  background-color: #3498db;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
   outline: none;
-  transform: translateY(-1px);
 }
 
-/* Container pesan info dan tautan lupa password */
+/* Pesan info/error container dengan efek fade */
 #messageContainer {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   width: 100%;
   min-height: 2rem;
   position: relative;
+  transition: opacity 0.3s ease;
 }
 
 /* Pesan error/info */
 #messageContainer .info {
   background-color: #fdecea;
   color: #b00020;
-  padding: 0.75rem;
+  padding: 1rem;
   border: 1px solid #f5c6cb;
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: 0.95rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  animation: fadeIn 0.3s ease;
 }
 
-/* Animasi shake saat password salah */
+/* Animasi fade */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Shake effect saat password salah */
 #messageContainer.shake {
-  animation: shakeAnimation 0.3s;
+  animation: shakeAnimation 0.4s;
 }
 
 @keyframes shakeAnimation {
   0% { transform: translateX(0); }
-  20% { transform: translateX(-5px); }
-  40% { transform: translateX(5px); }
-  60% { transform: translateX(-5px); }
-  80% { transform: translateX(5px); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-8px); }
+  80% { transform: translateX(8px); }
   100% { transform: translateX(0); }
 }
 
-/* Link lupa password */
+/* Link lupa password dengan hover efek */
 .forget-password {
   display: inline-block;
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
   color: #2980b9;
   text-decoration: underline;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: color 0.3s, transform 0.2s;
 }
 
 .forget-password:hover,
 .forget-password:focus {
   color: #3498db;
+  transform: translateY(-2px);
   outline: none;
 }
 
-/* Bagian daftar akun baru */
+/* Bagian daftar akun */
 .register-section {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   text-align: center;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #555;
 }
 
-/* Link daftar akun */
+/* Link daftar akun yang menarik */
 .register-link {
   display: inline-block;
-  margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
-  background-color: #2ecc71;
+  margin-top: 0.7rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #27ae60;
   color: #fff;
-  border-radius: 4px;
+  border-radius: 8px;
+  font-weight: 600;
   text-decoration: none;
-  transition: background-color 0.2s, transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .register-link:hover,
 .register-link:focus {
-  background-color: #27ae60;
+  background-color: #2ecc71;
+  transform: translateY(-2px);
   outline: none;
-  transform: translateY(-1px);
 }
